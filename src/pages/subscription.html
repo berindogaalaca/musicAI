@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MusicAl Pro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/framer-motion/dist/framer-motion.js"></script>
+    <style>
+      .gradient-bg {
+        background: radial-gradient(
+          180% 60% at top,
+          #a099ff 40%,
+          rgba(0, 0, 0, 0.94) 70%
+        );
+      }
+    </style>
+  </head>
+
+  <body class="gradient-bg min-h-screen text-black p-6">
+    <header class="mt-3 w-full">
+      <div class="flex items-center relative mb-4">
+        <button class="p-2 absolute left-0" onclick="history.back()">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M9.99998 13.28L5.65331 8.93333C5.13998 8.42 5.13998 7.58 5.65331 7.06667L9.99998 2.72"
+              stroke="black"
+              stroke-width="1.5"
+              stroke-miterlimit="10"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+        <div class="flex items-center justify-center gap-2 w-full">
+          <h2 class="text-[22px] font-medium leading-7">MusicAl</h2>
+          <span
+            class="bg-black text-white text-[11px] px-2 py-1 rounded-xl leading-[13px] font-medium"
+            >PRO</span
+          >
+        </div>
+      </div>
+      <p class="text-[15px] text-center">MusicAl Uygulamasının tadını çıkar!</p>
+    </header>
+
+    <div
+      id="subscription-plan"
+      class="bg-black/50 backdrop-blur-[110px] rounded-2xl p-4 backdrop-blur-sm mt-4 text-white border-[1px] border-white/50"
+    >
+      <div class="space-y-[6px]">
+        <label class="flex items-center cursor-pointer">
+          <input
+            type="radio"
+            name="plan"
+            value="monthly"
+            class="peer w-5 h-5 rounded-full border-[1.5px] border-white/50 appearance-none checked:border-white checked:bg-white checked:before:content-['✓'] checked:before:absolute checked:before:text-black/50 checked:flex checked:items-center checked:justify-center"
+          />
+          <div class="ms-4">
+            <div class="font-medium">Aylık</div>
+            <div class="text-[15px] opacity-80">₺3.99 / aylık</div>
+          </div>
+        </label>
+        <hr class="border-white/20" />
+
+        <label class="flex items-center justify-between cursor-pointer">
+          <div class="flex items-center">
+            <input
+              type="radio"
+              name="plan"
+              value="yearly"
+              class="peer w-5 h-5 rounded-full border-[1.5px] border-white/50 appearance-none checked:border-white checked:bg-white checked:before:content-['✓'] checked:before:absolute checked:before:text-black/50 checked:flex checked:items-center checked:justify-center"
+              checked
+            />
+            <div class="ms-4">
+              <div class="font-medium">Yıllık</div>
+              <div class="text-[15px] opacity-80">₺19.99 / yıllık</div>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <span
+              class="bg-white text-black font-medium text-xs px-[9.5px] py-[6px] rounded"
+              >AVANTAJLI</span
+            >
+          </div>
+        </label>
+      </div>
+    </div>
+
+    <div class="px-4 mt-4">
+      <h2
+        id="features-header"
+        class="text-[13px] text-center text-[#B0B0B0] font-medium leading-[18px] tracking-tight uppercase"
+      >
+        İÇİNDEKİLER
+      </h2>
+      <ul id="features-list" class="space-y-4 mt-4"></ul>
+    </div>
+
+    <div id="action-button" class="fixed bottom-0 left-0 right-0 space-y-3 p-4">
+      <div class="px-2">
+        <button
+          class="w-full bg-[#9D7EFF] text-black py-4 rounded-xl font-medium flex items-center justify-center gap-2 transition-all duration-300 ease-in-out hover:bg-[#9D7EFF]/90 hover:shadow-xl hover:scale-[1.02] relative overflow-hidden group"
+        >
+          <span
+            class="absolute inset-0 bg-white/30 transform -skew-x-12 -translate-x-full group-hover:translate-x-0 transition-transform duration-500"
+          ></span>
+          <svg
+            width="16"
+            height="17"
+            viewBox="0 0 16 17"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.10438 9.38446C5.78663 9.38446 1.90832 9.38446 1.90832 9.38446C1.49661 9.38446 1.15973 9.72129 1.15973 10.133V15.7515C1.15973 16.1632 1.49661 16.5 1.90832 16.5C1.90832 16.5 5.86778 16.5 7.19175 16.5C7.36785 16.5 7.36785 16.3109 7.36785 16.3109V9.63883C7.36785 9.63883 7.3678 9.38446 7.10438 9.38446Z"
+              fill="black"
+            />
+            <path
+              d="M14.0917 9.38446C14.0917 9.38446 10.1985 9.38446 8.90091 9.38446C8.58475 9.38446 8.63209 9.71371 8.63209 9.71371V16.317C8.63209 16.317 8.62953 16.4999 8.8197 16.4999C10.1377 16.4999 14.0916 16.4999 14.0916 16.4999C14.5033 16.4999 14.8402 16.1631 14.8402 15.7513V10.133C14.8403 9.72129 14.5034 9.38446 14.0917 9.38446Z"
+              fill="black"
+            />
+            <path
+              d="M7.3678 4.96374C7.3678 4.96374 7.3678 4.71008 7.11715 4.71008C5.6162 4.71008 1.06298 4.71008 1.06298 4.71008C0.651274 4.71008 0.314392 5.04696 0.314392 5.45862V7.7953C0.314392 8.20701 0.651274 8.54384 1.06298 8.54384C1.06298 8.54384 5.6366 8.54384 7.13765 8.54384C7.3678 8.54384 7.3678 8.34423 7.3678 8.34423V4.96374Z"
+              fill="black"
+            />
+            <path
+              d="M14.937 4.71008C14.937 4.71008 10.3819 4.71008 8.8635 4.71008C8.6322 4.71008 8.6322 4.93047 8.6322 4.93047V8.34886C8.6322 8.34886 8.6322 8.54384 8.9134 8.54384C10.4193 8.54384 14.937 8.54384 14.937 8.54384C15.3487 8.54384 15.6856 8.20701 15.6856 7.7953V5.45862C15.6856 5.04696 15.3487 4.71008 14.937 4.71008Z"
+              fill="black"
+            />
+            <path
+              d="M4.82168 4.15623C4.47918 4.15623 4.16635 4.12907 3.89203 4.07546C3.19525 3.93934 2.71635 3.67439 2.42795 3.26557C2.16955 2.89918 2.09047 2.4475 2.19284 1.92301C2.37216 1.00535 2.98844 0.5 3.92802 0.5C4.12687 0.5 4.34524 0.522961 4.57713 0.568282C5.16702 0.683521 5.9215 1.02177 6.59542 1.47307C7.73882 2.23884 7.79537 2.7149 7.73843 3.00641C7.65472 3.43475 7.25435 3.74082 6.51444 3.94217C6.01454 4.07819 5.39755 4.15623 4.82168 4.15623ZM3.92808 1.69978C3.5642 1.69978 3.43914 1.80144 3.37048 2.15305C3.3143 2.44052 3.38515 2.54092 3.40838 2.57392C3.50568 2.7119 3.75912 2.82698 4.12207 2.89782C4.31791 2.93611 4.5599 2.95634 4.82163 2.95634C5.39717 2.95634 5.90421 2.86913 6.24065 2.77375C6.26514 2.76682 6.30315 2.73786 6.26241 2.71359C5.82257 2.35528 5.01786 1.87681 4.34709 1.74576C4.19084 1.71533 4.04981 1.69978 3.92808 1.69978Z"
+              fill="black"
+            />
+            <path
+              d="M11.1956 4.15624C11.1956 4.15624 11.1956 4.15624 11.1955 4.15624C10.6197 4.15624 10.0027 4.0782 9.50282 3.94218C8.76285 3.74088 8.36254 3.43476 8.27882 3.00647C8.22194 2.71496 8.27839 2.2389 9.42189 1.47313C10.0957 1.02183 10.8502 0.683582 11.4402 0.568343C11.6721 0.523022 11.8904 0.500061 12.0891 0.500061C13.0289 0.500061 13.6452 1.00547 13.8243 1.92312C13.9268 2.44756 13.8478 2.89925 13.5893 3.26563C13.3009 3.6745 12.8221 3.9394 12.1251 4.07552C11.8509 4.12902 11.5381 4.15624 11.1956 4.15624ZM9.76444 2.70618C9.72545 2.72881 9.74432 2.76454 9.76455 2.77037C10.1008 2.86707 10.6132 2.9564 11.1955 2.9564C11.4574 2.9564 11.6992 2.93617 11.8951 2.89788C12.258 2.82698 12.5116 2.71196 12.6088 2.57398C12.6322 2.54099 12.7031 2.44058 12.6467 2.15311C12.5781 1.8015 12.453 1.69984 12.0891 1.69984C11.9674 1.69984 11.8265 1.71533 11.6701 1.74587C10.9993 1.87687 10.2043 2.34781 9.76444 2.70618Z"
+              fill="black"
+            />
+          </svg>
+
+          Hemen Yükselt
+        </button>
+      </div>
+      <p class="text-[#B0B0B0] text-center text-xs">
+        3 gün ücretsiz dene, sonra ₺19.99 / yıllık. İstediğin zaman iptal et.
+      </p>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const featuresList = document.getElementById("features-list");
+        const planRadios = document.querySelectorAll('input[name="plan"]');
+
+        async function fetchAndInitializeFeatures() {
+          try {
+            const response = await fetch("../assets/data/data.json");
+            const data = await response.json();
+
+            updateFeatures(data, "yearly");
+
+            planRadios.forEach((radio) => {
+              radio.addEventListener("change", () =>
+                updateFeatures(data, radio.value)
+              );
+            });
+          } catch (error) {
+            console.error("Veri alınırken hata oluştu:", error);
+          }
+        }
+
+        function updateFeatures(data, selectedType) {
+          const selectedPlan = data.plans.find(
+            (plan) => plan.type === selectedType
+          );
+          if (!selectedPlan) return;
+
+          featuresList.innerHTML = selectedPlan.features
+            .map(
+              (feature) => `
+      <li class="flex items-center gap-[17px]">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16.4175 9.82665H13.585V3.22665C13.585 1.68665 12.7508 1.37499 11.7333 2.52999L11 3.36415L4.79418 10.4225C3.94168 11.385 4.29918 12.1733 5.58251 12.1733H8.41501V18.7733C8.41501 20.3133 9.24918 20.625 10.2667 19.47L11 18.6358L17.2058 11.5775C18.0583 10.615 17.7008 9.82665 16.4175 9.82665Z" fill="white"/>
+        </svg>
+        <span class="text-white">${feature}</span>
+      </li>
+    `
+            )
+            .join("");
+        }
+
+        fetchAndInitializeFeatures();
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const animationElements = [
+          document.querySelector("header"),
+          document.getElementById("subscription-plan"),
+          document.getElementById("features-header"),
+          document.getElementById("features-list"),
+          document.getElementById("action-button"),
+        ];
+
+        function applyAnimation(element, delay) {
+          setTimeout(() => {
+            element.classList.remove("opacity-0", "translate-y-10");
+            element.classList.add(
+              "transition-all",
+              "duration-700",
+              "ease-out",
+              "opacity-100",
+              "translate-y-0"
+            );
+          }, delay);
+        }
+
+        animationElements.forEach((element) => {
+          element.classList.add("opacity-0", "transform", "translate-y-10");
+        });
+
+        animationElements.forEach((element, index) => {
+          applyAnimation(element, 300 * (index + 1));
+        });
+      });
+    </script>
+  </body>
+</html>
