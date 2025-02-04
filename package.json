@@ -1,0 +1,23 @@
+{
+  "name": "musicai",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/berindogaalaca/musicAI#readme",
+  "bugs": {
+    "url": "https://github.com/berindogaalaca/musicAI/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/berindogaalaca/musicAI.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}
