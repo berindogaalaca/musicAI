@@ -3,16 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../css/output.css" rel="stylesheet" />
+
     <title>MusicAl Pro</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/framer-motion/dist/framer-motion.js"></script>
     <style>
       .gradient-bg {
-        background: radial-gradient(
-          180% 60% at top,
-          #a099ff 40%,
-          rgba(0, 0, 0, 0.94) 70%
-        );
+        background: radial-gradient(180% 60% at top, #a099ff 40%, #161616 70%);
       }
     </style>
   </head>
@@ -153,20 +149,61 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        const featuresList = document.getElementById("features-list");
-        const planRadios = document.querySelectorAll('input[name="plan"]');
+        const elements = {
+          featuresList: document.getElementById("features-list"),
+          planRadios: document.querySelectorAll('input[name="plan"]'),
+          actionButton: document.querySelector("#action-button button"),
+          animationElements: [
+            document.querySelector("header"),
+            document.getElementById("subscription-plan"),
+            document.getElementById("features-header"),
+            document.getElementById("features-list"),
+            document.getElementById("action-button"),
+          ],
+        };
 
-        async function fetchAndInitializeFeatures() {
+        const savedPlan = localStorage.getItem("selectedPlan") || "yearly";
+
+        async function initializePage() {
           try {
             const response = await fetch("../assets/data/data.json");
             const data = await response.json();
 
-            updateFeatures(data, "yearly");
+            document.querySelector(
+              `input[value="${savedPlan}"]`
+            ).checked = true;
+            updateFeatures(data, savedPlan);
 
-            planRadios.forEach((radio) => {
+            elements.planRadios.forEach((radio) => {
               radio.addEventListener("change", () =>
                 updateFeatures(data, radio.value)
               );
+            });
+
+            elements.actionButton.addEventListener("click", () => {
+              const selectedPlan = document.querySelector(
+                'input[name="plan"]:checked'
+              ).value;
+              localStorage.setItem("selectedPlan", selectedPlan);
+              alert(
+                `${
+                  selectedPlan.charAt(0).toUpperCase() + selectedPlan.slice(1)
+                } plan selected`
+              );
+            });
+
+            elements.animationElements.forEach((element, index) => {
+              element.classList.add("opacity-0", "transform", "translate-y-10");
+              setTimeout(() => {
+                element.classList.remove("opacity-0", "translate-y-10");
+                element.classList.add(
+                  "transition-all",
+                  "duration-700",
+                  "ease-out",
+                  "opacity-100",
+                  "translate-y-0"
+                );
+              }, 300 * (index + 1));
             });
           } catch (error) {
             console.error("Veri alınırken hata oluştu:", error);
@@ -179,52 +216,21 @@
           );
           if (!selectedPlan) return;
 
-          featuresList.innerHTML = selectedPlan.features
+          elements.featuresList.innerHTML = selectedPlan.features
             .map(
               (feature) => `
-      <li class="flex items-center gap-[17px]">
-        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M16.4175 9.82665H13.585V3.22665C13.585 1.68665 12.7508 1.37499 11.7333 2.52999L11 3.36415L4.79418 10.4225C3.94168 11.385 4.29918 12.1733 5.58251 12.1733H8.41501V18.7733C8.41501 20.3133 9.24918 20.625 10.2667 19.47L11 18.6358L17.2058 11.5775C18.0583 10.615 17.7008 9.82665 16.4175 9.82665Z" fill="white"/>
-        </svg>
-        <span class="text-white">${feature}</span>
-      </li>
-    `
+                <li class="flex items-center gap-[17px]">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16.4175 9.82665H13.585V3.22665C13.585 1.68665 12.7508 1.37499 11.7333 2.52999L11 3.36415L4.79418 10.4225C3.94168 11.385 4.29918 12.1733 5.58251 12.1733H8.41501V18.7733C8.41501 20.3133 9.24918 20.625 10.2667 19.47L11 18.6358L17.2058 11.5775C18.0583 10.615 17.7008 9.82665 16.4175 9.82665Z" fill="white"/>
+                    </svg>
+                    <span class="text-white">${feature}</span>
+                </li>
+            `
             )
             .join("");
         }
 
-        fetchAndInitializeFeatures();
-      });
-
-      document.addEventListener("DOMContentLoaded", () => {
-        const animationElements = [
-          document.querySelector("header"),
-          document.getElementById("subscription-plan"),
-          document.getElementById("features-header"),
-          document.getElementById("features-list"),
-          document.getElementById("action-button"),
-        ];
-
-        function applyAnimation(element, delay) {
-          setTimeout(() => {
-            element.classList.remove("opacity-0", "translate-y-10");
-            element.classList.add(
-              "transition-all",
-              "duration-700",
-              "ease-out",
-              "opacity-100",
-              "translate-y-0"
-            );
-          }, delay);
-        }
-
-        animationElements.forEach((element) => {
-          element.classList.add("opacity-0", "transform", "translate-y-10");
-        });
-
-        animationElements.forEach((element, index) => {
-          applyAnimation(element, 300 * (index + 1));
-        });
+        initializePage();
       });
     </script>
   </body>

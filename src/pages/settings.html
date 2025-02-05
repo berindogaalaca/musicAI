@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="../css/output.css" rel="stylesheet" />
+    <script src="../index.js"></script>
 
-    <title>Ayarlar</title>
+    <title>Settings</title>
   </head>
   <body class="min-h-screen bg-[#161616] p-6" id="settings">
     <header class="w-full mb-4">
@@ -13,14 +14,14 @@
     </header>
 
     <div class="bg-[#262626] rounded-xl mb-4 text-white text-[13px] p-4">
-      <a href="./subscription.html" class="flex items-center justify-between">
+      <a href="./profile.html" class="flex items-center justify-between">
         <div class="flex items-center">
           <img
             class="w-10 h-10 object-cover"
             src="../assets/image/avatar.webp"
             alt="avatar image"
           />
-          <span class="ml-[10px]">Lorem Ipsum</span>
+          <span id="fullName" class="ml-[10px]">Lorem Ipsum</span>
         </div>
         <svg
           width="7"
@@ -113,7 +114,7 @@
     </div>
 
     <div class="bg-[#262626] rounded-xl mb-4 text-white text-[13px] p-4">
-      <a href="./subscription.html" class="flex items-center justify-between">
+      <a href="#" class="flex items-center justify-between">
         <span>Destek</span>
         <svg
           width="7"
@@ -168,8 +169,11 @@
         </svg>
       </a>
     </div>
-    <div class="bg-[#262626] rounded-xl mb-4 text-[#FF9999] text-[13px] p-4">
-      <a href="./subscription.html" class="flex items-center justify-between">
+    <button
+      class="bg-[#262626] w-full rounded-xl mb-4 text-[#FF9999] text-[13px] p-4"
+      id="logout-button"
+    >
+      <div class="flex items-center justify-between">
         <span>Çıkış Yap</span>
         <svg
           width="7"
@@ -186,83 +190,38 @@
             stroke-linejoin="round"
           />
         </svg>
-      </a>
-    </div>
-
-    <footer
-      class="bg-[#262626] rounded-xl mb-4 p-4 text-white text-[13px] fixed bottom-[9px] left-6 right-6"
-    >
-      <div class="flex justify-between items-center px-[62px]">
-        <a>
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              opacity="0.4"
-              d="M20.83 8.01002L14.28 2.77002C13 1.75002 11 1.74002 9.73 2.76002L3.18 8.01002C2.24 8.76002 1.67 10.26 1.87 11.44L3.13 18.98C3.42 20.67 4.99 22 6.7 22H17.3C18.99 22 20.59 20.64 20.88 18.97L22.14 11.43C22.32 10.26 21.75 8.76002 20.83 8.01002Z"
-              fill="white"
-              fill-opacity="0.4"
-            />
-            <path
-              d="M12 18.75C11.59 18.75 11.25 18.41 11.25 18V15C11.25 14.59 11.59 14.25 12 14.25C12.41 14.25 12.75 14.59 12.75 15V18C12.75 18.41 12.41 18.75 12 18.75Z"
-              fill="white"
-              fill-opacity="0.4"
-            />
-          </svg>
-        </a>
-
-        <a>
-          <svg
-            width="25"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              opacity="0.4"
-              d="M16.69 2H8.31C4.67 2 2.5 4.17 2.5 7.81V16.18C2.5 19.83 4.67 22 8.31 22H16.68C20.32 22 22.49 19.83 22.49 16.19V7.81C22.5 4.17 20.33 2 16.69 2Z"
-              fill="white"
-              fill-opacity="0.4"
-            />
-            <path
-              d="M7.5 14.35C7.09 14.35 6.75 14.01 6.75 13.6V10.4C6.75 9.99002 7.09 9.65002 7.5 9.65002C7.91 9.65002 8.25 9.99002 8.25 10.4V13.61C8.25 14.02 7.91 14.35 7.5 14.35Z"
-              fill="white"
-              fill-opacity="0.4"
-            />
-            <path
-              d="M12.5 16.09C12.09 16.09 11.75 15.75 11.75 15.34V8.65997C11.75 8.24997 12.09 7.90997 12.5 7.90997C12.91 7.90997 13.25 8.24997 13.25 8.65997V15.34C13.25 15.75 12.91 16.09 12.5 16.09Z"
-              fill="white"
-              fill-opacity="0.4"
-            />
-            <path
-              d="M17.5 14.35C17.09 14.35 16.75 14.01 16.75 13.6V10.4C16.75 9.99002 17.09 9.65002 17.5 9.65002C17.91 9.65002 18.25 9.99002 18.25 10.4V13.61C18.25 14.02 17.91 14.35 17.5 14.35Z"
-              fill="white"
-              fill-opacity="0.4"
-            />
-          </svg>
-        </a>
-        <a class="hover:fill-[#A099FF]" href="./settings.html">
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g filter="url(#filter0_dd_1_538)">
-              <path
-                d="M20.94 6.42L15.77 3.43C14.78 2.86 13.23 2.86 12.24 3.43L7.01999 6.44C4.94999 7.84 4.82999 8.05 4.82999 10.28V15.71C4.82999 17.94 4.94999 18.16 7.05999 19.58L12.23 22.57C12.73 22.86 13.37 23 14 23C14.63 23 15.27 22.86 15.76 22.57L20.98 19.56C23.05 18.16 23.17 17.95 23.17 15.72V10.28C23.17 8.05 23.05 7.84 20.94 6.42ZM14 16.25C12.21 16.25 10.75 14.79 10.75 13C10.75 11.21 12.21 9.75 14 9.75C15.79 9.75 17.25 11.21 17.25 13C17.25 14.79 15.79 16.25 14 16.25Z"
-                fill="#4d4d50"
-              />
-            </g>
-          </svg>
-        </a>
       </div>
-    </footer>
+    </button>
+    <div id="footer-container"></div>
+    <script>
+      function loadFooter() {
+        fetch("../components/footer.html")
+          .then((res) => res.text())
+          .then((html) => {
+            document.getElementById("footer-container").innerHTML = html;
+            handleFooterIcons();
+          });
+      }
+      document.addEventListener("DOMContentLoaded", loadFooter);
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const nameSpan = document.getElementById("fullName");
+        const updateName = () => {
+          const profileData = JSON.parse(
+            localStorage.getItem("profileData") || "{}"
+          );
+          nameSpan.textContent = profileData.fullName || "Berin Doga Alaca";
+        };
+
+        updateName();
+
+        document
+          .getElementById("logout-button")
+          .addEventListener("click", () => {
+            localStorage.clear();
+            updateName();
+          });
+      });
+    </script>
   </body>
 </html>
