@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="../css/output.css" rel="stylesheet" />
+    <script src="../js/translation.js"></script>
 
     <title>MusicAl Pro</title>
     <style>
@@ -13,7 +14,7 @@
     </style>
   </head>
 
-  <body class="gradient-bg min-h-screen text-black p-6">
+  <body class="gradient-bg min-h-screen text-black p-6 font-inter">
     <header class="mt-3 w-full">
       <div class="flex items-center relative mb-4">
         <button class="p-2 absolute left-0" onclick="history.back()">
@@ -42,7 +43,9 @@
           >
         </div>
       </div>
-      <p class="text-[15px] text-center">MusicAl Uygulamasının tadını çıkar!</p>
+      <p class="text-[15px] text-center" data-translate="enjoyApp">
+        MusicAl Uygulamasının tadını çıkar!
+      </p>
     </header>
 
     <div
@@ -58,8 +61,10 @@
             class="peer w-5 h-5 rounded-full border-[1.5px] border-white/50 appearance-none checked:border-white checked:bg-white checked:before:content-['✓'] checked:before:absolute checked:before:text-black/50 checked:flex checked:items-center checked:justify-center"
           />
           <div class="ms-4">
-            <div class="font-medium">Aylık</div>
-            <div class="text-[15px] opacity-80">₺3.99 / aylık</div>
+            <div class="font-medium" data-translate="monthly">Aylık</div>
+            <div class="text-[15px] opacity-80" data-translate="monthlyPrice">
+              ₺3.99 / aylık
+            </div>
           </div>
         </label>
         <hr class="border-white/20" />
@@ -74,13 +79,16 @@
               checked
             />
             <div class="ms-4">
-              <div class="font-medium">Yıllık</div>
-              <div class="text-[15px] opacity-80">₺19.99 / yıllık</div>
+              <div class="font-medium" data-translate="yearly">Yıllık</div>
+              <div class="text-[15px] opacity-80" data-translate="yearlyPrice">
+                ₺19.99 / yıllık
+              </div>
             </div>
           </div>
           <div class="flex items-center">
             <span
-              class="bg-white text-black font-medium text-xs px-[9.5px] py-[6px] rounded"
+              data-translate="advantageous"
+              class="bg-white text-black font-medium text-xs px-[9.5px] py-[6px] rounded font-poppins"
               >AVANTAJLI</span
             >
           </div>
@@ -92,6 +100,7 @@
       <h2
         id="features-header"
         class="text-[13px] text-center text-[#B0B0B0] font-medium leading-[18px] tracking-tight uppercase"
+        data-translate="features"
       >
         İÇİNDEKİLER
       </h2>
@@ -102,6 +111,7 @@
       <div class="px-2">
         <button
           class="w-full bg-[#9D7EFF] text-black py-4 rounded-xl font-medium flex items-center justify-center gap-2 transition-all duration-300 ease-in-out hover:bg-[#9D7EFF]/90 hover:shadow-xl hover:scale-[1.02] relative overflow-hidden group"
+          data-translate="upgrade"
         >
           <span
             class="absolute inset-0 bg-white/30 transform -skew-x-12 -translate-x-full group-hover:translate-x-0 transition-transform duration-500"
@@ -142,13 +152,14 @@
           Hemen Yükselt
         </button>
       </div>
-      <p class="text-[#B0B0B0] text-center text-xs">
+      <p class="text-[#B0B0B0] text-center text-xs" data-translate="trialInfo">
         3 gün ücretsiz dene, sonra ₺19.99 / yıllık. İstediğin zaman iptal et.
       </p>
     </div>
-
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
+      document.addEventListener("DOMContentLoaded", async () => {
+        await loadTranslations();
+
         const elements = {
           featuresList: document.getElementById("features-list"),
           planRadios: document.querySelectorAll('input[name="plan"]'),
@@ -218,14 +229,14 @@
 
           elements.featuresList.innerHTML = selectedPlan.features
             .map(
-              (feature) => `
-                <li class="flex items-center gap-[17px]">
-                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M16.4175 9.82665H13.585V3.22665C13.585 1.68665 12.7508 1.37499 11.7333 2.52999L11 3.36415L4.79418 10.4225C3.94168 11.385 4.29918 12.1733 5.58251 12.1733H8.41501V18.7733C8.41501 20.3133 9.24918 20.625 10.2667 19.47L11 18.6358L17.2058 11.5775C18.0583 10.615 17.7008 9.82665 16.4175 9.82665Z" fill="white"/>
-                    </svg>
-                    <span class="text-white">${feature}</span>
-                </li>
-            `
+              (featureKey) => `
+            <li class="flex items-center gap-[17px]">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.4175 9.82665H13.585V3.22665C13.585 1.68665 12.7508 1.37499 11.7333 2.52999L11 3.36415L4.79418 10.4225C3.94168 11.385 4.29918 12.1733 5.58251 12.1733H8.41501V18.7733C8.41501 20.3133 9.24918 20.625 10.2667 19.47L11 18.6358L17.2058 11.5775C18.0583 10.615 17.7008 9.82665 16.4175 9.82665Z" fill="white"/>
+              </svg>
+              <span class="text-white">${translations[currentLanguage][featureKey]}</span>
+            </li>
+          `
             )
             .join("");
         }

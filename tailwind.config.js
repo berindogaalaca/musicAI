@@ -8,6 +8,10 @@ module.exports = {
       colors: {
         "custom-bg": "#161616",
       },
+      fontFamily: {
+        inter: ["Inter", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
+      },
     },
   },
   plugins: [],

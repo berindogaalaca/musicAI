@@ -1,0 +1,92 @@
+{
+  "en": {
+    "settings": "Settings",
+    "subscriptions": "Subscriptions",
+    "savedCards": "Saved Cards",
+    "notifications": "Notifications",
+    "language": "Language",
+    "support": "Support",
+    "privacyPolicy": "Privacy Policy",
+    "rateUs": "Rate Us",
+    "logout": "Logout",
+
+    "enjoyApp": "Enjoy the MusicAl App!",
+    "upgrade": "Upgrade Now",
+    "monthly": "Monthly",
+    "monthlyPrice": "$3.99 / month",
+    "yearly": "Yearly",
+    "yearlyPrice": "$19.99 / year",
+    "advantageous": "BEST VALUE",
+    "features": "FEATURES",
+    "trialInfo": "Try 3 days free, then $19.99/year. Cancel anytime.",
+
+    "feature1_monthly": "Basic AI music generation",
+    "feature2_monthly": "Up to 50 songs per month",
+    "feature3_monthly": "Standard quality export",
+
+    "feature1_yearly": "Advanced AI music generation",
+    "feature2_yearly": "Unlimited songs generation",
+    "feature3_yearly": "High quality export",
+    "feature4_yearly": "Priority support 24/7",
+
+    "profile": "Profile",
+    "editProfile": "Edit Profile 👤",
+    "fullName": "Full Name",
+    "phoneNumber": "Phone Number",
+    "email": "Email",
+    "update": "Update",
+    "profileUpdated": "Profile information updated!",
+
+    "nameRequired": "Name is required",
+    "nameMinLength": "Name must be at least 3 characters",
+    "phoneRequired": "Phone number is required",
+    "phoneInvalid": "Please enter a valid phone number",
+    "emailRequired": "Email is required",
+    "emailInvalid": "Please enter a valid email address"
+  },
+  "tr": {
+    "settings": "Ayarlar",
+    "subscriptions": "Abonelikler",
+    "savedCards": "Kayıtlı Kartlarım",
+    "notifications": "Bildirimler",
+    "language": "Dil",
+    "support": "Destek",
+    "privacyPolicy": "Gizlilik Politikası",
+    "rateUs": "Bizi Değerlendirin",
+    "logout": "Çıkış Yap",
+
+    "enjoyApp": "MusicAl Uygulamasının tadını çıkar!",
+    "upgrade": "Hemen Yükselt",
+    "monthly": "Aylık",
+    "monthlyPrice": "₺3.99 / aylık",
+    "yearly": "Yıllık",
+    "yearlyPrice": "₺19.99 / yıllık",
+    "advantageous": "AVANTAJLI",
+    "features": "İÇİNDEKİLER",
+    "trialInfo": "3 gün ücretsiz dene, sonra ₺19.99 / yıllık. İstediğin zaman iptal et.",
+
+    "feature1_monthly": "Temel AI müzik üretimi",
+    "feature2_monthly": "Aylık 50 şarkıya kadar",
+    "feature3_monthly": "Standart kalitede dışa aktarma",
+
+    "feature1_yearly": "Gelişmiş AI müzik üretimi",
+    "feature2_yearly": "Sınırsız şarkı üretimi",
+    "feature3_yearly": "Yüksek kalitede dışa aktarma",
+    "feature4_yearly": "7/24 öncelikli destek",
+
+    "profile": "Profil",
+    "editProfile": "Profilini Düzenle 👤",
+    "fullName": "Ad Soyad",
+    "phoneNumber": "Telefon Numarası",
+    "email": "Email",
+    "update": "Güncelle",
+    "profileUpdated": "Profil bilgileriniz güncellendi!",
+
+    "nameRequired": "İsim alanı zorunludur",
+    "nameMinLength": "İsim en az 3 karakter olmalıdır",
+    "phoneRequired": "Telefon numarası zorunludur",
+    "phoneInvalid": "Geçerli bir telefon numarası giriniz",
+    "emailRequired": "Email alanı zorunludur",
+    "emailInvalid": "Geçerli bir email adresi giriniz"
+  }
+}
