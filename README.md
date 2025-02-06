@@ -11,6 +11,10 @@ MusicAl, yapay zeka destekli bir müzik uygulamasıdır. Kullanıcılar aylık v
 - JavaScript
 - JSON
 
+## Kullanilan Kaynaklar
+
+- TailwindCSS -> https://v3.tailwindcss.com/docs/installation
+
 ## Proje Yapısı
 
 src/
