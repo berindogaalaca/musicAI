@@ -19,8 +19,6 @@ src/
 │ │ ├── data.json # Abonelik planları ve özellikleri
 │ │ └── translation.json # Çoklu dil desteği çevirileri
 │ └── image/
-├── components/
-│ └── footer.html # Ortak footer bileşeni
 ├── css/
 │ ├── input.css # TailwindCSS kaynak dosyası
 │ └── output.css # Derlenmiş CSS
@@ -74,16 +72,6 @@ function updateTexts() {
 Settings.js dosyası, ayarlar sayfasının işlevselliğini yönetir:
 
 ```javascript
-// Footer baska pagelerde gozğkeceği için bileşen olarak tuttum ve sayfalarda bunu cağırdım
-function loadFooter() {
-  fetch("../components/footer.html")
-    .then((res) => res.text())
-    .then((html) => {
-      document.getElementById("footer-container").innerHTML = html;
-      handleFooterIcons();
-    });
-}
-
 // Profil biilgilerini güncelledim localde bu verileri tuttum
 const updateName = () => {
   const profileData = JSON.parse(localStorage.getItem("profileData") || "{}");
