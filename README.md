@@ -237,3 +237,5 @@ Kullanıcı profil bilgilerini yönetme:
 - Minimal CSS (TailwindCSS)
 - Optimize edilmiş görseller
 - Modüler JavaScript yapısı
+
+  
