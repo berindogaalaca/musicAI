@@ -2,20 +2,15 @@
   "plans": [
     {
       "type": "monthly",
-      "features": [
-        "10 Şarkı Dinleme Hakkı",
-        "Reklamlı Kullanım",
-        "Standart Ses Kalitesi"
-      ]
+      "features": ["feature1_monthly", "feature2_monthly", "feature3_monthly"]
     },
     {
       "type": "yearly",
       "features": [
-        "Sınırsız Şarkı Dinleme",
-        "Reklamsız Kullanım",
-        "Yüksek Ses Kalitesi",
-        "Çevrimdışı Dinleme",
-        "Özel Çalma Listeleri"
+        "feature1_yearly",
+        "feature2_yearly",
+        "feature3_yearly",
+        "feature4_yearly"
       ]
     }
   ]

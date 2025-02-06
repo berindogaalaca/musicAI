@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="../css/output.css" rel="stylesheet" />
     <script src="../index.js"></script>
+    <script src="../js/translation.js"></script>
 
     <title>Settings</title>
   </head>
-  <body class="min-h-screen bg-[#161616] p-6" id="settings">
+  <body class="min-h-screen bg-[#161616] p-6 font-inter" id="settings">
     <header class="w-full mb-4">
-      <h2 class="font-[Inter] text-white text-center">Ayarlar</h2>
+      <h2 class="text-white text-center" data-translate="settings">Ayarlar</h2>
     </header>
 
     <div class="bg-[#262626] rounded-xl mb-4 text-white text-[13px] p-4">
@@ -43,7 +44,7 @@
 
     <div class="bg-[#262626] rounded-xl mb-4 text-white text-[13px] p-4">
       <a href="./subscription.html" class="flex items-center justify-between">
-        <span>Abonelikler</span>
+        <span data-translate="subscriptions">Abonelikler</span>
         <svg
           width="7"
           height="12"
@@ -61,7 +62,7 @@
         </svg>
       </a>
       <a href="#" class="flex items-center justify-between pt-4">
-        <span>Kayıtlı Kartlarım</span>
+        <span data-translate="savedCards">Kayıtlı Kartlarım</span>
         <svg
           width="7"
           height="12"
@@ -82,7 +83,7 @@
 
     <div class="bg-[#262626] rounded-xl mb-4 p-4 text-white text-[13px]">
       <div class="flex items-center justify-between">
-        <span>Bildirimler</span>
+        <span data-translate="notifications">Bildirimler</span>
         <label class="relative inline-flex items-center cursor-pointer">
           <input type="checkbox" class="sr-only peer" checked />
           <div
@@ -90,32 +91,63 @@
           ></div>
         </label>
       </div>
-      <div class="flex items-center justify-between pt-4">
-        <span>Dil</span>
-        <div class="flex items-center">
-          <span class="text-white mr-2 text-xs">English</span>
-          <svg
-            width="7"
-            height="12"
-            viewBox="0 0 7 12"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+
+      <div class="flex items-center justify-between pt-4 relative">
+        <span id="languageLabel" data-translate="language" class="text-xs"
+          >Dil</span
+        >
+        <div class="relative">
+          <button
+            id="languageButton"
+            class="flex items-center hover:text-gray-900 focus:outline-none"
           >
-            <path
-              d="M0.82193 1L6.09312 6L0.82193 11"
-              stroke="#4F4F4F"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
+            <span id="selectedLanguage" class="mr-2 text-sm font-poppins"
+              >English</span
+            >
+            <svg
+              width="7"
+              height="12"
+              viewBox="0 0 7 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              id="dropdownArrow"
+              class="transform transition-transform duration-200"
+            >
+              <path
+                d="M0.82193 1L6.09312 6L0.82193 11"
+                stroke="#4F4F4F"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <div
+            id="languageDropdown"
+            class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-10"
+          >
+            <div class="py-1">
+              <a
+                href="#"
+                data-lang="en"
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                >English</a
+              >
+              <a
+                href="#"
+                data-lang="tr"
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                >Türkçe</a
+              >
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="bg-[#262626] rounded-xl mb-4 text-white text-[13px] p-4">
       <a href="#" class="flex items-center justify-between">
-        <span>Destek</span>
+        <span data-translate="support">Destek</span>
         <svg
           width="7"
           height="12"
@@ -133,7 +165,7 @@
         </svg>
       </a>
       <a href="#" class="flex items-center justify-between pt-4">
-        <span>Gizlilik Politikası</span>
+        <span data-translate="privacyPolicy">Gizlilik Politikası</span>
         <svg
           width="7"
           height="12"
@@ -151,7 +183,7 @@
         </svg>
       </a>
       <a href="#" class="flex items-center justify-between pt-4">
-        <span>Bizi Değerlendirin</span>
+        <span data-translate="rateUs">Bizi Değerlendirin</span>
         <svg
           width="7"
           height="12"
@@ -174,7 +206,7 @@
       id="logout-button"
     >
       <div class="flex items-center justify-between">
-        <span>Çıkış Yap</span>
+        <span data-translate="logout">Çıkış Yap</span>
         <svg
           width="7"
           height="12"
